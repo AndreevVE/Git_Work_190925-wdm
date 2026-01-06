@@ -27,6 +27,9 @@ while [[ $file_extension = "" ]]; do
 done
 
 # Запросить новое расширение для файлов.
+echo "Введите новое расширение файлов:"
+read new_file_extension
+echo "Вы ввели расширение: $new_file_extension"
 
 # Проверка существования исходной директории и целевой директории
 if [ ! -d "$source_directory" || ! -r "$source_directory]; then
@@ -55,4 +58,6 @@ echo "Проверка пройдена успешно"
 current_date=$(date +"%Y-%m-%d")
 archive_name="old_files_$current_date.tar.gz"
 
+
 tar -czf "$target_directory/$archive_name" "$source_directory"/
+
