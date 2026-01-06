@@ -27,8 +27,11 @@ while [[ $file_extension = "" ]]; do
 done
 
 # Запросить новое расширение для файлов.
+while :; do
 echo "Введите новое расширение файлов:"
 read new_file_extension
+[[ -n "$new_file_extension" ]] && break
+done
 echo "Вы ввели расширение: $new_file_extension"
 
 # Проверка существования исходной директории и целевой директории
