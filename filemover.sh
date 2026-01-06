@@ -1,8 +1,23 @@
 #!/bin/bash
 
 # Запрос исходной и целевой директории у пользователя
-read -p "Исходная директория: " source_directory
-read -p "Целевая директория: " target_directory
+while true; do
+  read -p "Исходная директория: " source_directory
+  if [ -z "$source_directory" ]; then
+    echo "Пожалуйста, введите имя исходной директории."
+  else
+    break
+  fi
+done
+
+while true; do
+  read -p "Целевая директория: " target_directory
+  if [ -z "$target_directory" ]; then
+    echo "Пожалуйста, введите имя целевой директории."
+  else
+    break
+  fi
+done
 # Запрос расширения файлов, которые нужно скопировать
 
 # Запросить новое расширение для файлов.
