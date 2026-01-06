@@ -15,4 +15,13 @@ read -p "Целевая директория: " target_directory
 # Копирование файлов с указанным расширением в целевую директорию
 
 # Архивация исходных файлов.
+# 7.Создание архива исходных файлов.
+# Описание: Создать сжатый tar архив с исходными файлами.
+# Действие: Архивируем файлы из исходной директории source_directory с расширением - file_extension
+# Архив создается в целефой директории - target_directory
+# Имя архива: old_files_"Текщая дата в формате Y-M-D".tar.gz
+# Удалите файлы с расширением file_extension из исходной директории
+current_date=$(date +"%Y-%m-%d")
+archive_name="old_files_$current_date.tar.gz"
 
+tar -czf "$target_directory/$archive_name" "$source_directory"/
